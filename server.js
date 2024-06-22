@@ -21,7 +21,12 @@ class Server {
 
         this.paths = {
             auth: '/api/auth',
-            users: '/api/users',
+            worker: '/api/worker',
+            company: '/api/company',
+            area: '/api/area',
+            post: '/api/post',
+            evaluation: '/api/evaluation',
+            intervention: '/api/intervention'
         };
 
         this.dbConnection(); 
@@ -60,7 +65,8 @@ class Server {
     }
     
     routes() {
-        //this.app.use(require('./routes'));
+        this.app.use( this.paths.worker, require('./routes/workerRoutes'));
+        this.app.use( this.paths.company, require('./routes/companyRoutes'));
     }
     
     listen() {

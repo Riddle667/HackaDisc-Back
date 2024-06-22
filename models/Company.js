@@ -18,6 +18,10 @@ Company.init({
     name: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    main: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
     }
 }, {
     sequelize: db,
