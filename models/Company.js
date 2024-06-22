@@ -29,15 +29,15 @@ Company.init({
 });
 
 Company.belongsToMany(Company, {
-    through: 'MultiCompany',
-    as: 'MainCompanies',
+    through: 'MultiCompanies',
+    as: 'SubCompanies',
     foreignKey: 'main_company_id',
     otherKey: 'sub_company_id',
   });
   
   Company.belongsToMany(Company, {
-    through: 'MultiCompany',
-    as: 'SubCompanies',
+    through: 'MultiCompanies',
+    as: 'MainCompanies',
     foreignKey: 'sub_company_id',
     otherKey: 'main_company_id',
   });

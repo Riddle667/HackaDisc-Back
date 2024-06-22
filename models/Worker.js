@@ -42,15 +42,18 @@ Worker.init({
 });
 
 Worker.hasMany(Intervention, {
-    foreignKey: 'worker_id'
+    foreignKey: 'worker_id',
+    as: 'interventions'
 })
 
 Worker.hasMany(Evaluation, {
-    foreignKey: 'worker_id'
+    foreignKey: 'worker_id',
+    as: 'evaluations'
 });
 
 Worker.belongsTo(Post, {
-    foreignKey: 'post_id'
+    foreignKey: 'post_id',
+    as: 'post'
 });
 
 Worker.belongsTo(Company, {

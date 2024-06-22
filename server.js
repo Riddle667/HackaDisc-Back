@@ -67,6 +67,7 @@ class Server {
     routes() {
         this.app.use( this.paths.worker, require('./routes/workerRoutes'));
         this.app.use( this.paths.company, require('./routes/companyRoutes'));
+        this.app.use( this.paths.evaluation, require('./routes/evaluationRoutes'));
     }
     
     listen() {
